@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script src="lib/JSAN.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="../lib/URI.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    // An additional test helper.
+    function uri_ok(str, scheme, authority, path, query, fragment) {
+      var u = new URI(str);
+      ok(u, "URI from '" + str + "'");
+      is(scheme,    u.scheme,    "Scheme of '" + str + "'");
+      is(authority, u.authority, "Authority of '" + str + "'");
+      is(path,      u.path,      "Path of '" + str + "'");
+      is(query,     u.query,     "Query of '" + str + "'");
+      is(fragment,  u.fragment,  "Fragment of '" + str + "'");
+    }
+  </script>
+</head>
+
+<body>
+  <pre id="test"><script type="text/javascript">
+    JSAN.use('Test.More');
+    plan({ tests: 36 });
+    uri_ok("http://www.example.com/foo/bar?page=1#baz",
+               "http", "www.example.com", "/foo/bar", "page=1", "baz");
+    uri_ok("?page=1", null, null, null, "page=1");
+    uri_ok("#foo", null, null, null, null, "foo");
+    uri_ok("//example.com/foo/bar", null, "example.com", "/foo/bar");
+    uri_ok("http:", "http");
+    uri_ok("");
+</script></pre>
+</body>
+</html>

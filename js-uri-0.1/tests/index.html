@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script src="lib/JSAN.js" type="text/javascript" charset="utf-8"></script>
+	<title>All Tests</title>
+	
+</head>
+
+<body>
+
+  <script type="text/javascript" charset="utf-8">
+    JSAN.use('Test.Harness');
+    JSAN.use('Test.Harness.Browser');
+    var t = new Test.Harness.Browser();
+    
+    t.runTests(
+      "parse.t.html",
+      "toString.t.html",
+      "resolve.t.html"
+    );
+  </script>
+
+</body>
+</html>

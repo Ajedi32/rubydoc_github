@@ -1,0 +1,26 @@
+{
+  "name": "GitHub Ruby Documentation Viewer",
+  "description": "View documentation for Ruby projects on GitHub using the RubyDoc.info YARD documentation server.",
+  "version": "0.1",
+  "permissions": [
+    "tabs",
+    "http://rubydoc.info/*"
+  ],
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "background": {
+    "scripts": ["jquery-2.0.3.min.js", "js-uri-0.1/lib/URI.js", "array_trim.js", "function_bind.js", "page_action_icon.js", "background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_title": "Show Documentation",
+    "default_icon": {
+      "19": "icon-19-still.png",
+      "38": "icon-38-still.png"
+    }
+  },
+  "manifest_version": 2
+}
