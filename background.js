@@ -7,7 +7,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 		var path = url.path.split("/").trim("");
 		if (path.length >= 2 && path[0] !== "settings") {
 			chrome.pageAction.show(tabId);
-			pageActionIcons[tabId] = new PageActionIcon(tabId);
 		}
 	}
 });
@@ -19,7 +18,7 @@ chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
 // When the page action is clicked
 chrome.pageAction.onClicked.addListener(function(tab) {
 	var repoData = parseGitHubURL(tab.url);
-	var pageActionIcon = pageActionIcons[tab.id];
+	var pageActionIcon = getIconForTab(tab.id);
 
 	pageActionIcon.set("loading");
 	buildDocumentation(repoData.repo, repoData.commit).done(function() {
@@ -29,6 +28,10 @@ chrome.pageAction.onClicked.addListener(function(tab) {
 		pageActionIcon.set("error");
 	});
 });
+
+function getIconForTab(tabId) {
+	return (pageActionIcons[tabId] || (pageActionIcons[tabId] = new PageActionIcon(tabId)));
+}
 
 function parseGitHubURL(url) {
 	url = new URI(url);
