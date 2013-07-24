@@ -1,7 +1,7 @@
 {
   "name": "GitHub Ruby Documentation Viewer",
   "description": "View documentation for Ruby projects on GitHub using the RubyDoc.info YARD documentation server.",
-  "version": "0.1",
+  "version": "0.1.1",
   "permissions": [
     "tabs",
     "http://rubydoc.info/*"
