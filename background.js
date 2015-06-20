@@ -57,14 +57,14 @@ function buildDocumentation(repo, commit) {
 
 function pollCheckout(repo, commit) {
 	return $.ajax({
-		url: 'http://rubydoc.info/checkout/' + repo + "/" + commit,
+		url: 'http://www.rubydoc.info/checkout/' + repo + "/" + commit,
 		dataType: 'text'
 	});
 }
 
 function doCheckout(repo, commit) {
 	return $.ajax({
-		url: 'http://rubydoc.info/checkout',
+		url: 'http://www.rubydoc.info/checkout',
 		type: "POST",
 		data: {scheme: "git", url: "https://github.com/" + repo, commit: commit},
 		dataType: 'text'
@@ -88,7 +88,7 @@ function confirmCheckout(repo, commit) {
 }
 
 function viewCheckout(repo, commit) {
-	chrome.tabs.create({url: "http://rubydoc.info/github/" + repo + "/" + commit + "/frames"});
+	chrome.tabs.create({url: "http://www.rubydoc.info/github/" + repo + "/" + commit + "/frames"});
 }
 
 function shortenCommit(commit) {

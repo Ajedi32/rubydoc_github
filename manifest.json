@@ -4,7 +4,7 @@
   "version": "0.1.1",
   "permissions": [
     "tabs",
-    "http://rubydoc.info/*"
+    "*://www.rubydoc.info/*"
   ],
   "icons": {
     "16": "icon-16.png",
