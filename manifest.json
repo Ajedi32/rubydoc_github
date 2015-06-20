@@ -7,19 +7,19 @@
     "*://www.rubydoc.info/*"
   ],
   "icons": {
-    "16": "icon-16.png",
-    "48": "icon-48.png",
-    "128": "icon-128.png"
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
   },
   "background": {
-    "scripts": ["jquery-2.0.3.min.js", "array_trim.js", "function_bind.js", "page_action_icon.js", "background.js"],
+    "scripts": ["lib/jquery-2.0.3.min.js", "lib/array_trim.js", "lib/function_bind.js", "lib/page_action_icon.js", "background.js"],
     "persistent": false
   },
   "page_action": {
     "default_title": "Show Documentation",
     "default_icon": {
-      "19": "icon-19-still.png",
-      "38": "icon-38-still.png"
+      "19": "icons/icon-19-still.png",
+      "38": "icons/icon-38-still.png"
     }
   },
   "manifest_version": 2
