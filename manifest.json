@@ -12,7 +12,7 @@
     "128": "icon-128.png"
   },
   "background": {
-    "scripts": ["jquery-2.0.3.min.js", "js-uri-0.1/lib/URI.js", "array_trim.js", "function_bind.js", "page_action_icon.js", "background.js"],
+    "scripts": ["jquery-2.0.3.min.js", "array_trim.js", "function_bind.js", "page_action_icon.js", "background.js"],
     "persistent": false
   },
   "page_action": {

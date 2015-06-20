@@ -2,9 +2,9 @@ var pageActionIcons = {};
 
 // Listen for any changes to the URL of any tab.
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-	var url = new URI(tab.url);
-	if (url.authority.match(/(www\.)?github.com/)) {
-		var path = url.path.split("/").trim("");
+	var url = new URL(tab.url);
+	if (url.host.match(/(www\.)?github.com/)) {
+		var path = url.pathname.split("/").trim("");
 		if (path.length >= 2 && path[0] !== "settings") {
 			chrome.pageAction.show(tabId);
 		}
@@ -34,8 +34,8 @@ function getIconForTab(tabId) {
 }
 
 function parseGitHubURL(url) {
-	url = new URI(url);
-	var path = url.path.split("/").trim("");
+	url = new URL(url);
+	var path = url.pathname.split("/").trim("");
 
 	return {
 		repo: path[0] + "/" + path[1],
